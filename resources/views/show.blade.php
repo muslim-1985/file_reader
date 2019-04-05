@@ -21,7 +21,7 @@
                                         @foreach($document->files as $file)
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <a href="{{ asset('storage/'.$file->path) }}">{{ $file->name }}</a>
+                                                    <a href="{{ asset('storage/'.$file->path) }}" target="_blank" rel="noopener noreferrer">{{ $file->name }}</a>
                                                 </div>
                                                 <div class="col-6" style="margin-top: 10px">
                                                     <form method="post" action="{{ route('delFile', $file->id) }}" style="float: right">

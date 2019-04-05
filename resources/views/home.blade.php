@@ -37,6 +37,8 @@
                                         <th scope="row">1</th>
                                         <td><a href="{{ route('show',$document->id) }}">{{ $document->name }}</a></td>
                                         <td>
+                                            <a href="{{ route('show', $document->id) }}" type="button"
+                                               class="btn btn-primary btn-sm">Edit</a>
                                             <a href="{{ route('copy', $document->id) }}" type="button"
                                                class="btn btn-primary btn-sm">Copy</a>
                                             <form method="post" action="{{ route('delDoc', $document->id) }}" style="display: inline">

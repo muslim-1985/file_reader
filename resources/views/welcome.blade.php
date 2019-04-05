@@ -91,7 +91,7 @@
                                             <ul>
                                                 @foreach($document->files as $file)
                                                     <li>
-                                                        <a href="{{ asset('storage/'.$file->path) }}">{{ $file->name }}</a>
+                                                        <a href="{{ asset('storage/'.$file->path) }}" target="_blank" rel="noopener noreferrer">{{ $file->name }}</a>
                                                     </li>
                                                 @endforeach
                                             </ul>
