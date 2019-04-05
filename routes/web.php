@@ -11,10 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'AppController@index');
 
 Auth::routes();
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('/', 'AdminController@index')->name('home');
+    Route::get('create', 'AdminController@create')->name('create');
+    Route::post('createDoc', 'AdminController@store')->name('createDoc');
+    Route::delete('doc/{id}', 'AdminController@delete')->name('delDoc');
+    Route::get('show/{id}', 'AdminController@show')->name('show');
+    Route::delete('file/{id}', 'AdminController@fileDestroy')->name('delFile');
+    Route::patch('document/{id}', 'AdminController@store')->name('update');
+    Route::get('copy/{id}', 'AdminController@copy')->name('copy');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
